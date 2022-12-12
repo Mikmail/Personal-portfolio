@@ -1,0 +1,40 @@
+!!!
+%html.bg-gray-100
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Facebook
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+    
+    %nav.flex.bg-blue-600.p-4.font-bold.text-white
+      = link_to root_path do
+        %p.hover:opacity-50
+          Facebook
+      - if current_user
+        .absolute.right-5.flex
+          .hover:opacity-50
+            = link_to "Sign Out", destroy_user_session_path, method: :delete
+          .ml-5
+            = image_tag current_user.gravatar_url(default: 'monsterid'), class: "gravatar rounded-full w-8"
+        .ml-4.hover:opacity-50.mr-4
+          = link_to "User Page", user_path(current_user.id)
+        .hover:opacity-50.mr-4 
+          = link_to "Find friends", users_path
+        .hover:opacity-50
+          - if current_user.follow_requests.count > 0
+            = link_to notifications_path do 
+              .bg-yellow-400.rounded-md
+                %svg{:style => "width:24px;height:24px", :viewbox => "0 0 24 24"}
+                  %path{:d => "M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21", :fill => "currentColor"}
+          - else
+            = link_to notifications_path do    
+              %svg{:style => "width:24px;height:24px", :viewbox => "0 0 24 24"}
+                %path{:d => "M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21", :fill => "currentColor"}
+
+    = yield
