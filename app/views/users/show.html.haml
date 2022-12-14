@@ -1,0 +1,12 @@
+.grid.text-center.border-2
+  - if @user.profile
+    = render "profiles/info", user: @user
+  - else 
+    %h1.text-2xl.bangers
+      = @user.username
+  %p 
+  - if @user == current_user
+    - if current_user.profile
+      = button_to "Edit profile", edit_profile_path(current_user), method: "get", class: "bg-blue-500 text-white rounded-md shadow-md w-28 hover:cursor-pointer hover:bg-blue-700 hover:font-bold"
+    - elsif @user.profile.nil?
+      = button_to "Add profile info", new_profile_path(@user), method: "get", class: "bg-green-600 text-white rounded-md shadow-md w-32 hover:cursor-pointer hover:bg-green-700 hover:font-bold" 

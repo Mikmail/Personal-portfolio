@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "profiles#index"
 
+  resources :users
 
   resources :profiles
 

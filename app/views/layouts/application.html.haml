@@ -1,5 +1,5 @@
 !!!
-%html
+%html.bg-gray-500.text-white
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Personal-portfolio
@@ -9,4 +9,16 @@
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body
+
+    %nav.flex.bg-gray-800.p-5.shadow-lg
+      %div
+        = link_to root_path do
+          %p.hover:bg-white.hover:text-black.font-bold.rounded-md.px-2.text-white
+            Home
+      - if current_user
+        .hover:bg-white.hover:text-black.hover:cursor-pointer.font-bold.rounded-md.px-2.text-white
+          = link_to "My portfolio", user_path(current_user.id)
+        .absolute.right-5.flex
+          .hover:bg-white.hover:text-black.font-bold.rounded-md.px-2.text-white
+            = button_to "Sign Out", destroy_user_session_path, method: :delete, class: "hover:cursor-pointer"
     = yield

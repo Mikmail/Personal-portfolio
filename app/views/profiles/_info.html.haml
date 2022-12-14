@@ -1,0 +1,13 @@
+.m-10.text-5xl.bangers.font-medium.font-serif.hover:font-bold
+  = user.profile.display_name
+  %hr.m-2
+  %p.text-xl.arial
+    = user.profile.display_role
+.mb-3.w-96.place-self-center.rounded-md.shadow-md.bg-gray-700.m-5.hover:shadow-2xl
+  %p.text-2xl.mb-5 About me
+  = user.profile.display_intro
+.mt-20.mb-3
+  = user.profile.display_link.gsub(URI.regexp, '<a href="\0">\0</a>').html_safe
+.mt-20.mb-3
+  %b Last updated:
+  = @user.profile.updated_time_formatted

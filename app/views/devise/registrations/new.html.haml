@@ -1,19 +1,19 @@
-.grid.text-center
-  .border-2.rounded-md.w-96.mt-40.shadow-md.bg-white.place-self-center
+.grid.place-content-center.text-center
+  .rounded-md.w-96.mt-40.shadow-md.bg-gray-700
     = form_for(resource, as: resource_name, url: user_registration_path) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field 
         %br/
-        = f.text_field :username, placeholder: 'Username'
+        = f.text_field :username, placeholder: 'Username', class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .field
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email"
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .field
         %br/
-        = f.password_field :password, autocomplete: "new-password", placeholder: "Password #{@minimum_password_length} characters minimum"
+        = f.password_field :password, autocomplete: "new-password", placeholder: "Password #{@minimum_password_length} characters minimum", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .field
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation"
+        = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .actions.bg-blue-600.text-white.rounded-md.text-xl.px-2.w-90.m-5
         = f.submit "Sign up"
     = link_to new_session_path(resource_name) do
