@@ -17,7 +17,7 @@
             Home
       - if current_user
         .hover:bg-white.hover:text-black.hover:cursor-pointer.font-bold.rounded-md.px-2.text-white
-          = link_to "My portfolio", user_path(current_user.id)
+          = link_to "My portfolio", user_path(current_user.username)
         .absolute.right-5.flex
           .hover:bg-white.hover:text-black.font-bold.rounded-md.px-2.text-white
             = button_to "Sign Out", destroy_user_session_path, method: :delete, class: "hover:cursor-pointer"

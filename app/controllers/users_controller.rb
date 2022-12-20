@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:index]
+  before_action :set_user
 
-  def idex 
+  def index 
     @users = User.all 
   end 
 
   def show;end 
 
   def set_user 
-    @user = User.find(params[:id]) 
+    @user = User.friendly.find_by_username(params[:id]) 
   end 
 end

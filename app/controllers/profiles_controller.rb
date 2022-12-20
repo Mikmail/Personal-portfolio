@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.build_profile(profile_params)
 
     if @profile.save 
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user.username)
     else 
       render :new 
     end 
@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find_by(user_id: current_user.id)
 
     if @profile.update(profile_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user.username)
     else 
       render :edit 
     end 

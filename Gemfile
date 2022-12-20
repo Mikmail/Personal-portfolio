@@ -9,6 +9,8 @@ gem 'devise'
 
 gem 'rails_autolink'
 
+gem 'friendly_id', '~> 5.4.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
 # Use sqlite3 as the database for Active Record
