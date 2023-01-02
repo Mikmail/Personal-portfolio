@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params 
-    params.require(:profile).permit(:name, :intro, :role, :link)
+    params.require(:profile).permit(:name, :intro, :role, :link, :ruby, :c, :c_sharp, :css, :html, :java, :javascript, :php, :python, :r, :rails, :typescript, :avatar)
   end
 
 end

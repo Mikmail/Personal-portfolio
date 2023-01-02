@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_20_092825) do
+ActiveRecord::Schema.define(version: 2023_01_02_122920) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -31,6 +31,19 @@ ActiveRecord::Schema.define(version: 2022_12_20_092825) do
     t.string "intro"
     t.string "role"
     t.string "link"
+    t.boolean "ruby"
+    t.boolean "c"
+    t.boolean "c_sharp"
+    t.boolean "css"
+    t.boolean "html"
+    t.boolean "java"
+    t.boolean "php"
+    t.boolean "python"
+    t.boolean "r"
+    t.boolean "rails"
+    t.boolean "javascript"
+    t.boolean "typescript"
+    t.string "avatar"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
