@@ -22,6 +22,10 @@ class Profile < ApplicationRecord
     avatar.nil? ? "" : avatar
   end
 
+  def display_email 
+    email.nil? ? "" : email
+  end
+
   def updated_time_formatted 
     updated_at.strftime("%b %-d, %Y - %l:%M %P")
   end

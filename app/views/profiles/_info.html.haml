@@ -8,45 +8,82 @@
   = user.profile.display_intro
 .mt-20.hover:font-bold
   = user.profile.display_link.gsub(URI.regexp, '<a href="\0">\0</a>').html_safe
-.mt-20.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center
-  - if user.profile.ruby == true 
-    = link_to "https://www.ruby-lang.org/en/" do  
-      = image_tag "ruby.png"
-  - if user.profile.c == true 
-    = link_to "https://www.cprogramming.com" do
-      = image_tag "c.png"
-  - if user.profile.c_sharp == true 
-    = link_to "https://learn.microsoft.com/en-us/dotnet/csharp/" do
-      = image_tag "csharp.png"
-  - if user.profile.html == true 
-    = link_to "https://www.w3schools.com/html/" do
-      = image_tag "html5.png"
-  - if user.profile.css == true 
-    = link_to "https://www.w3schools.com/css/" do
-      = image_tag "css3.png"
-  - if user.profile.java == true 
-    = link_to "https://www.java.com/en/" do
-      = image_tag "java.png"
-  - if user.profile.javascript == true
-    = link_to "https://www.javascript.com" do 
-      = image_tag "javascript.png"
-  - if user.profile.php == true 
-    = link_to "https://www.php.net" do
-      = image_tag "php.png"
-  - if user.profile.python == true 
-    = link_to "https://www.python.org" do
-      = image_tag "python.png"
-  - if user.profile.r == true 
-    = link_to "https://www.r-project.org" do
-      = image_tag "r.png"
-  - if user.profile.rails == true 
-    = link_to "https://rubyonrails.org" do
-      = image_tag "rails.png"
-  - if user.profile.typescript == true
-    = link_to "https://www.typescriptlang.org" do 
-      = image_tag "typescript.png"
+.flex.place-self-center.mt-20
+  %h1.mr-40.font-bold.text-2xl
+    Languages
+  %h2.ml-40.font-bold.text-2xl
+    Skills
+
+.flex.place-self-center
+  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2
+    - if user.profile.ruby == true 
+      = link_to "https://www.ruby-lang.org/en/" do
+        = image_tag "ruby.png"
+    - if user.profile.c == true 
+      = link_to "https://www.cprogramming.com" do
+        = image_tag "c.png"
+    - if user.profile.c_sharp == true 
+      = link_to "https://learn.microsoft.com/en-us/dotnet/csharp/" do
+        = image_tag "csharp.png"
+    - if user.profile.html == true 
+      = link_to "https://www.w3schools.com/html/" do
+        = image_tag "html5.png"
+    - if user.profile.css == true 
+      = link_to "https://www.w3schools.com/css/" do
+        = image_tag "css3.png"
+    - if user.profile.java == true 
+      = link_to "https://www.java.com/en/" do
+        = image_tag "java.png"
+    - if user.profile.javascript == true
+      = link_to "https://www.javascript.com" do 
+        = image_tag "javascript.png"
+    - if user.profile.php == true 
+      = link_to "https://www.php.net" do
+        = image_tag "php.png"
+    - if user.profile.python == true 
+      = link_to "https://www.python.org" do
+        = image_tag "python.png"
+    - if user.profile.r == true 
+      = link_to "https://www.r-project.org" do
+        = image_tag "r.png"
+    - if user.profile.rails == true 
+      = link_to "https://rubyonrails.org" do
+        = image_tag "rails.png"
+    - if user.profile.typescript == true
+      = link_to "https://www.typescriptlang.org" do 
+        = image_tag "typescript.png"
+
+  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2
+    - if user.profile.team_management == true 
+      = link_to "https://en.wikipedia.org/wiki/Team_management" do
+        = image_tag "project.png"
+    - if user.profile.research == true 
+      = link_to "https://www.indeed.com/career-advice/career-development/research-skills" do
+        = image_tag "research.png"
+    - if user.profile.project_management == true
+      = link_to "https://en.wikipedia.org/wiki/Project_management" do
+        = image_tag "archieve.png"
+    - if user.profile.financial_management == true 
+      = link_to "https://en.wikipedia.org/wiki/Financial_management" do
+        = image_tag "financial.png"
+    - if user.profile.process_improvement == true 
+      = link_to "https://www.forbes.com/advisor/business/what-is-process-improvement/" do
+        = image_tag "process-improvement.png"
+    - if user.profile.it_governance == true 
+      = link_to "https://www.itgovernance.co.uk/it_governance" do
+        = image_tag "data-transfer.png"
+    - if user.profile.software_development == true 
+      = link_to "https://en.wikipedia.org/wiki/Software_development" do
+        = image_tag "terminal.png"
+    - if user.profile.agile_and_scrum == true 
+      = link_to "https://www.northeastern.edu/graduate/blog/agile-vs-scrum/" do
+        = image_tag "agile.svg"
 .mt-20.mb-3
   = user.profile.display_avatar
-.mt-20.mb-3
+.mt-20
+  %h1.font-bold
+    Contact me through email or phone: 
+  = user.profile.display_email
+.mt-10.mb-3
   %b Last updated:
   = @user.profile.updated_time_formatted 

@@ -35,8 +35,28 @@
       = form.label :Rails
       = form.check_box :typescript, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
       = form.label :Typescript
+    %div.m-5
+      %p Check the skills you would say you have: 
+      = form.check_box :team_management, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Team managament"
+      = form.check_box :research, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Research"
+      = form.check_box :project_management, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Project_management"
+      = form.check_box :financial_management, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Financial_management"
+      = form.check_box :process_improvement, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Process improvement"
+      = form.check_box :it_governance, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "IT governance"
+      = form.check_box :software_development, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Software development"
+      = form.check_box :agile_and_scrum, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.label "Agile & Scrum"
     %div.m-3
       = form.file_field :avatar
+    %dev.m-3
+      = form.email_field :email, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
     %p  
       = button_tag(type: "submit") do
         .bg-green-500.text-white.rounded-md.shadow-md.m-5.px-8.hover:bg-green-700.hover:font-bold
