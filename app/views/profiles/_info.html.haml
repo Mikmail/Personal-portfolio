@@ -80,10 +80,16 @@
         = image_tag "agile.svg"
 .mt-20.mb-3
   = user.profile.display_avatar
-.mt-20
+.mt-20.place-self-center
   %h1.font-bold
     Contact me through email or phone: 
-  = user.profile.display_email
+  .w-96.border-2.m-2.rounded-md.shadow-lg
+    = user.profile.display_email
+  - if user.profile.number == "" || user.profile.number.nil?
+    .border-none
+  - else 
+    .w-96.border-2.m-2.rounded-md.shadow-lg
+      = user.profile.display_number
 .mt-10.mb-3
   %b Last updated:
   = @user.profile.updated_time_formatted 

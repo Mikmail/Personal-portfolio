@@ -3,10 +3,10 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
         %br/
-        = f.text_field :login, placeholder: "Username or Email", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
+        = f.email_field :email, placeholder: "Email", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .field
         %br/
-        = f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
+        = f.password_field :password, placeholder: "Password", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
       .actions
       = button_tag(type: "submit") do
         .bg-blue-600.text-white.rounded-md.text-xl.px-28.w-90.m-5.hover:bg-blue-800.cursor-pointer

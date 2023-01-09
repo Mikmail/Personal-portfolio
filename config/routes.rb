@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "profiles#index"
   
+  post '/set_theme', to: 'application#set_theme'
 
   devise_for :users
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_05_104755) do
+ActiveRecord::Schema.define(version: 2023_01_05_121033) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2023_01_05_104755) do
     t.boolean "software_development"
     t.boolean "agile_and_scrum"
     t.string "email"
+    t.integer "number"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

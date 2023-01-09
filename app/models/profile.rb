@@ -23,7 +23,11 @@ class Profile < ApplicationRecord
   end
 
   def display_email 
-    email.nil? ? "" : email
+    email.nil? ? "" : email.capitalize
+  end
+  
+  def display_number 
+    number.nil? ? "" : number 
   end
 
   def updated_time_formatted 
