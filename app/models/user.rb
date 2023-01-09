@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_one :profile
 
+  has_one :file_upload
+
   def login
     @login || self.username || self.email
   end

@@ -1,7 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
-
-
+  
   def display_name
     name.empty? ? "" : name.titleize
   end
@@ -16,10 +15,6 @@ class Profile < ApplicationRecord
 
   def display_link 
     link.nil? ? "" : link
-  end
-
-  def display_avatar
-    avatar.nil? ? "" : avatar
   end
 
   def display_email 

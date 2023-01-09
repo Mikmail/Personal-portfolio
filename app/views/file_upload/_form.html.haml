@@ -1,0 +1,7 @@
+.grid.text-center.rounded-md.shadow-md.bg-gray-700.m-10
+  = form_with model: @file_upload do |form|
+    = form.file_field :avatar
+    
+    = button_tag(type: "submit") do
+      .bg-green-500.text-white.rounded-md.shadow-md.m-5.px-8.hover:bg-green-700.hover:font-bold
+        Upload file  

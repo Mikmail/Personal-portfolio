@@ -15,7 +15,7 @@
     Skills
 
 .flex.place-self-center
-  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2
+  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2.hover:shadow-lg
     - if user.profile.ruby == true 
       = link_to "https://www.ruby-lang.org/en/" do
         = image_tag "ruby.png"
@@ -53,7 +53,7 @@
       = link_to "https://www.typescriptlang.org" do 
         = image_tag "typescript.png"
 
-  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2
+  .mt-5.grid.grid-cols-6.mb-3.bg-gray-800.w-auto.rounded-md.place-self-center.m-2.hover:shadow-lg
     - if user.profile.team_management == true 
       = link_to "https://en.wikipedia.org/wiki/Team_management" do
         = image_tag "project.png"
@@ -78,8 +78,14 @@
     - if user.profile.agile_and_scrum == true 
       = link_to "https://www.northeastern.edu/graduate/blog/agile-vs-scrum/" do
         = image_tag "agile.svg"
-.mt-20.mb-3
-  = user.profile.display_avatar
+.mt-10.place-self-center
+  - if current_user.file_upload 
+    = render "file_upload/info", user: @user
+  %p
+  - if @user == current_user
+    - if current_user.file_upload.nil?
+      = button_to "Upload a file", new_file_upload_path(@user), method: "get", class: "bg-blue-500 text-white rounded-md shadow-md w-28 hover:cursor-pointer hover:bg-blue-700 hover:font-bold m-2"
+
 .mt-20.place-self-center
   %h1.font-bold
     Contact me through email or phone: 
@@ -90,6 +96,3 @@
   - else 
     .w-96.border-2.m-2.rounded-md.shadow-lg
       = user.profile.display_number
-.mt-10.mb-3
-  %b Last updated:
-  = @user.profile.updated_time_formatted 

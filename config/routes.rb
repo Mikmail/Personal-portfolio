@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   
   post '/set_theme', to: 'application#set_theme'
 
+  get '/users/:id/download_avatar', to: 'users#download_avatar', as: 'download_avatar'
+
   devise_for :users
 
   resources :users
+
+  resources :file_upload
 
   resources :profiles
 
