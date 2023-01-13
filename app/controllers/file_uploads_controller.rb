@@ -1,5 +1,4 @@
-class FileUploadController < ApplicationController
-  before_action :require_login 
+class FileUploadsController < ApplicationController
 
   def new 
     @file_upload = FileUpload.new 
@@ -20,7 +19,7 @@ class FileUploadController < ApplicationController
   end 
 
   def index
-    @file_upload = file_upload.all 
+    @file_uploads = FileUpload.all 
   end
 
   def update 
@@ -35,15 +34,6 @@ class FileUploadController < ApplicationController
 
   def show 
     @file_upload = file_upload.find_by(params[:id])
-  end
-
-
-  private 
-
-  def require_login
-    unless current_user 
-      redirect_to new_user_session_path
-    end
   end
 
   def file_upload_params 

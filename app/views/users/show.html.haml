@@ -1,4 +1,4 @@
-.grid.text-center.border-2
+%h1.grid.text-center.border-2{class: session[:dark_mode] ? "dark-mode" : "light-mode"}
   - if @user.profile
     = render "profiles/info", user: @user
 

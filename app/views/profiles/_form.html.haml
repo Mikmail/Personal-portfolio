@@ -54,8 +54,8 @@
       = form.check_box :agile_and_scrum, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
       = form.label "Agile & Scrum"
     %dev.m-3
-      = form.email_field :email, placeholder: "Enter your email", class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
-      = form.telephone_field :number, placeholder: "Enter your phone number", class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
+      = form.email_field :email, placeholder: "Enter your email", class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white", :required => true
+      = form.telephone_field :number, placeholder: "Enter your phone number", class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white", :required => true
     %p  
       = button_tag(type: "submit") do
         .bg-green-500.text-white.rounded-md.shadow-md.m-5.px-8.hover:bg-green-700.hover:font-bold

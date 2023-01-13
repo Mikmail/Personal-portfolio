@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "profiles#index"
   
-  post '/set_theme', to: 'application#set_theme'
+  get 'toggle_dark_mode', to: 'application#toggle_dark_mode'
 
   get '/users/:id/download_avatar', to: 'users#download_avatar', as: 'download_avatar'
 
@@ -9,9 +9,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :file_upload
+  resources :file_uploads
 
   resources :profiles
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

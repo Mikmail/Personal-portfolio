@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_130332) do
+ActiveRecord::Schema.define(version: 2023_01_10_093858) do
 
   create_table "file_uploads", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.string "avatar"
     t.index ["user_id"], name: "index_file_uploads_on_user_id"
   end
 
