@@ -3,6 +3,8 @@
   %hr.m-2{class: session[:dark_mode] ? "dark-mode" : "light-mode"}
   %p.text-xl.arial
     = user.profile.display_role
+  .m-5 
+    %img{src: url_for(@user.profile.avatar)}
 %div.mb-3.w-96.place-self-center.rounded-md.shadow-md.bg-gray-700.m-5.hover:shadow-2xl.overflow-auto.h-96{class: session[:dark_mode] ? "dark-mode" : "light-mode"}
   %p.text-2xl.mb-5 About me
   = user.profile.display_intro
@@ -78,13 +80,6 @@
     - if user.profile.agile_and_scrum == true 
       = link_to "https://www.northeastern.edu/graduate/blog/agile-vs-scrum/" do
         = image_tag "agile.svg"
-.mt-10.place-self-center
-  - if current_user.file_upload 
-    = render "file_upload/info", user: @user
-  %p
-  - if @user == current_user
-    = button_to "Upload a file", new_file_upload_path(@user), method: "get", class: "bg-blue-500 text-white rounded-md shadow-md w-28 hover:cursor-pointer hover:bg-blue-700 hover:font-bold m-2"
-
 .mt-20.place-self-center
   %h1.font-bold
     Contact me through email or phone: 

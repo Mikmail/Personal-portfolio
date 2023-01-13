@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
   def create 
     @profile = current_user.build_profile(profile_params)
 
+    @profile.avatar.attach(params[:profile][:avatar])
     if @profile.save 
       redirect_to user_path(current_user.username)
     else 
@@ -46,7 +47,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params 
-    params.require(:profile).permit(:name, :intro, :role, :link, :ruby, :c, :c_sharp, :css, :html, :java, :javascript, :php, :python, :r, :rails, :typescript, :avatar, :team_management, :research, :project_management, :financial_management, :process_improvement, :it_governance, :software_development, :agile_and_scrum, :email, :number)
+    params.require(:profile).permit(:name, :intro, :role, :link, :ruby, :c, :c_sharp, :css, :html, :java, :javascript, :php, :python, :r, :rails, :typescript, :avatar, :team_management, :research, :project_management, :financial_management, :process_improvement, :it_governance, :software_development, :agile_and_scrum, :avatar, :email, :number)
   end
 
 end
