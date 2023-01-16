@@ -4,7 +4,8 @@
   %p.text-xl.arial
     = user.profile.display_role
   .m-5 
-    %img{src: url_for(@user.profile.avatar)}
+    - if @user.profile.avatar?
+      %img{src: url_for(@user.profile.avatar)}
 %div.mb-3.w-96.place-self-center.rounded-md.shadow-md.bg-gray-700.m-5.hover:shadow-2xl.overflow-auto.h-96{class: session[:dark_mode] ? "dark-mode" : "light-mode"}
   %p.text-2xl.mb-5 About me
   = user.profile.display_intro
