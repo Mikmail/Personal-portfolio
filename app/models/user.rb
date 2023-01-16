@@ -7,7 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   attr_writer :login
 
-  has_one_attached :avatar
 
   has_one :profile
 

@@ -6,10 +6,11 @@
     %h1.text-2xl.bangers
       = @user.username
 
-  .flex.mt-10.mb-3.place-self-center
-    %b.mr-3
-      Last updated:
-    = @user.profile.updated_time_formatted
+  - if @user.profile
+    .flex.mt-10.mb-3.place-self-center
+      %b.mr-3
+        Last updated:
+      = @user.profile.updated_time_formatted
   %p 
   - if @user == current_user
     - if current_user.profile
