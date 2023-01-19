@@ -12,10 +12,6 @@ class User < ApplicationRecord
 
   has_one :file_upload
 
-  def login
-    @login || self.username || self.email
-  end
-
   def created_time_formatted
     created_at.strftime("%b %-d, %Y")
   end
