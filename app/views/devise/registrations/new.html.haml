@@ -1,5 +1,5 @@
 .grid.place-content-center.text-center
-  - if session[:dark_theme]
+  - if session[:dark_mode]
     .rounded-md.w-96.mt-40.shadow-md.bg-gray-700
       = form_for(resource, as: resource_name, url: user_registration_path) do |f|
         = render "devise/shared/error_messages", resource: resource
@@ -8,15 +8,16 @@
           = f.text_field :username, placeholder: 'Username', class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
         .field
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
+          = f.email_field :email, placeholder: "Email", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
         .field
           %br/
-          = f.password_field :password, autocomplete: "new-password", placeholder: "Password #{@minimum_password_length} characters minimum", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
+          = f.password_field :password, placeholder: "Password #{@minimum_password_length} characters minimum", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
         .field
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
-        .actions.bg-blue-600.text-white.rounded-md.text-xl.px-2.w-90.m-5
-          = f.submit "Sign up"
+          = f.password_field :password_confirmation, placeholder: "Password confirmation", class: "rounded-md border-none bg-gray-500 text-white placeholder:text-white" 
+        = button_tag(type: "submit") do
+          .bg-green-500.text-white.rounded-md.text-xl.px-28.w-90.mt-5.hover:bg-green-700.cursor-pointer
+            Sign up
       = link_to new_session_path(resource_name) do
         .text-blue-500.hover:underline.m-5
           Already have a user?
@@ -29,13 +30,13 @@
           = f.text_field :username, placeholder: 'Username', class: "rounded-md border-none bg-white text-black placeholder:text-black" 
         .field
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
+          = f.email_field :email, placeholder: "Email", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
         .field
           %br/
-          = f.password_field :password, autocomplete: "new-password", placeholder: "Password #{@minimum_password_length} characters minimum", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
+          = f.password_field :password, placeholder: "Password #{@minimum_password_length} characters minimum", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
         .field
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
+          = f.password_field :password_confirmation, placeholder: "Password confirmation", class: "rounded-md border-none bg-white text-black placeholder:text-black" 
         = button_tag(type: "submit") do
           .bg-green-500.text-white.rounded-md.text-xl.px-28.w-90.mt-5.hover:bg-green-700.cursor-pointer
             Sign up
