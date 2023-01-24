@@ -2,12 +2,15 @@
   = form_with model: @profile do |form|
     - if session[:dark_mode]
       %h2.mb-3 Personal Info
+      %p.m-2
+        = form.label "Upload a picture of yourself"
+      = form.file_field :avatar
       %div
         = form.text_field :name, placeholder: "What's your name?", class: "rounded-md shadow-md border-none m-5 bg-gray-500 placeholder:text-white"
       %div 
         = form.text_field :role, placeholder: "What's your role?", class: "rounded-md shadow-md border-none m-5 bg-gray-500 placeholder:text-white"
       %div  
-        = form.text_area :intro, placeholder: "What do you d, and why?", class: "rounded-md shadow-md border-none m-5 bg-gray-500 placeholder:text-white"
+        = form.text_area :intro, placeholder: "What do you do, and why?", class: "rounded-md shadow-md border-none m-5 bg-gray-500 placeholder:text-white"
       %div 
         = form.text_field :link, placeholder: "Paste Github link here", class: "rounded-md shadow-md border-none m-5 bg-gray-500 placeholder:text-white"
       %div 
@@ -37,7 +40,7 @@
         = form.check_box :typescript, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
         = form.label :Typescript
       %div.m-5
-        %p Check the skills you would say you have: 
+        %p Check the skillsets you have:
         = form.check_box :team_management, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
         = form.label "Team managament"
         = form.check_box :research, class: "rounded-md shadow-md border-none m-2 bg-gray-500 placeholder:text-white"
@@ -99,7 +102,7 @@
         = form.check_box :typescript, class: "rounded-md shadow-md border-none m-2 bg-white placeholder:text-white"
         = form.label :Typescript
       %div.m-5
-        %p Check the skills you would say you have: 
+        %p Check the skillsets you have: 
         = form.check_box :team_management, class: "rounded-md shadow-md border-none m-2 bg-white placeholder:text-white"
         = form.label "Team managament"
         = form.check_box :research, class: "rounded-md shadow-md border-none m-2 bg-white placeholder:text-white"
